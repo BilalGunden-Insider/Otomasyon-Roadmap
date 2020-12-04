@@ -33,14 +33,14 @@ class SegmentPush(WebPush):
 
 
 class PriceAlertPush(WebPush):
-    def __init__(self, price_info, Discount_rate, platform, optIn, global_frequency_capping, start_date, end_date,
+    def __init__(self, price_info, discount_rate, platform, optIn, global_frequency_capping, start_date, end_date,
                  language, push_type):
         super().__init__(platform, optIn, global_frequency_capping, start_date, end_date, language, push_type)
         self.price_info = price_info
-        self.Discount_rate = float(Discount_rate)
+        self.discount_rate = float(discount_rate)
 
     def discountPrice(self):
-        discountAmount = self.price_info - (self.price_info * self.Discount_rate / 100)
+        discountAmount = self.price_info - (self.price_info * self.discount_rate / 100)
         return discountAmount
 
 
@@ -55,12 +55,9 @@ class InstockPush(WebPush):
             self.stock_info = False
         elif not self.stock_info:
             self.stock_info = True
-        else:
-            print("Something went wrong")
 
 
-TriggerPushExample = TriggerPush("https://www.google.com/", "Web", True, 2, "15/05/2020", "17/05/2020", "Turkish",
-                                 "Trigger")
+TriggerPushExample = TriggerPush("Homepage", "Web", True, 2, "15/05/2020", "17/05/2020", "Turkish", "Trigger")
 TriggerPushExample.sendPush()
 BulkPushExample = BulkPush(1605104481, "Web", True, 4, "16/04/2020", "16/05/2020", "All language", "Bulk")
 BulkPushExample.sendPush()
