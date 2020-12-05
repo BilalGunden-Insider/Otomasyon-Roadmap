@@ -48,49 +48,50 @@ def sayi_atama(sayi):
 
 """ÜÇÜNCÜ SORU"""
 
-vize1 = int(input("Birinci vize notunu giriniz : "))
+while True:
+    vize1 = int(input("Birinci vize notunu giriniz : "))
+    vize2 = int(input("İkinci vize notunu giriniz : "))
+    final = int(input("Final notunu giriniz : "))
+    if 100 > vize1 > 0 and 100 > vize2 > 0 and 100 > final > 0:
+        break
+    else:
+        print("Notlar 0 ile 100 arasında olmalı, tekrar dene.")
+        continue
+
 vize1_etki_notu = int(vize1 * 30 / 100)
-
-vize2 = int(input("İkinci vize notunu giriniz : "))
 vize2_etki_notu = int(vize2 * 30 / 100)
-
-final = int(input("Final notunu giriniz : "))
 final_etki_notu = int(final * 40 / 100)
-
 genelNot = vize1_etki_notu + vize2_etki_notu + final_etki_notu
 
 
 def not_kontrol():
-    if 100 > vize1 > 0 and 100 > vize2 > 0 and 100 > final > 0:
-        if genelNot >= 90:
-            print("genel Not ortalaması = {} ".format(genelNot))
-            print("Not kartı = AA")
-        elif 90 > genelNot >= 85:
-            print("genel Not ortalaması = {} ".format(genelNot))
-            print("Not kartı = BA")
-        elif 85 > genelNot >= 80:
-            print("genel Not ortalaması = {} ".format(genelNot))
-            print("Not kartı = BB")
-        elif 80 > genelNot >= 75:
-            print("genel Not ortalaması = {} ".format(genelNot))
-            print("Not kartı = CB")
-        elif 75 > genelNot >= 70:
-            print("genel Not ortalaması = {} ".format(genelNot))
-            print("Not kartı = CC")
-        elif 70 > genelNot >= 65:
-            print("genel Not ortalaması = {} ".format(genelNot))
-            print("Not kartı = DC")
-        elif 65 > genelNot >= 60:
-            print("genel Not ortalaması = {} ".format(genelNot))
-            print("Not kartı = DD")
-        elif 60 > genelNot >= 55:
-            print("genel Not ortalaması = {} ".format(genelNot))
-            print("Not kartı = FD")
-        elif 55 > genelNot:
-            print("genel Not ortalaması = {} ".format(genelNot))
-            print("Not kartı = FF")
+    if genelNot >= 90:
+        print("genel Not ortalaması = {} ".format(genelNot))
+        print("Not kartı = AA")
+    elif 90 > genelNot >= 85:
+        print("genel Not ortalaması = {} ".format(genelNot))
+        print("Not kartı = BA")
+    elif 85 > genelNot >= 80:
+        print("genel Not ortalaması = {} ".format(genelNot))
+        print("Not kartı = BB")
+    elif 80 > genelNot >= 75:
+        print("genel Not ortalaması = {} ".format(genelNot))
+        print("Not kartı = CB")
+    elif 75 > genelNot >= 70:
+        print("genel Not ortalaması = {} ".format(genelNot))
+        print("Not kartı = CC")
+    elif 70 > genelNot >= 65:
+        print("genel Not ortalaması = {} ".format(genelNot))
+        print("Not kartı = DC")
+    elif 65 > genelNot >= 60:
+        print("genel Not ortalaması = {} ".format(genelNot))
+        print("Not kartı = DD")
+    elif 60 > genelNot >= 55:
+        print("genel Not ortalaması = {} ".format(genelNot))
+        print("Not kartı = FD")
+    elif 55 > genelNot:
+        print("genel Not ortalaması = {} ".format(genelNot))
+        print("Not kartı = FF")
 
-    else:
-        print("Girilen not değerleri 0-100 arasında olmalı")
 
 not_kontrol()
