@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
 utmSettings = (
-    By.CSS_SELECTOR, ".utmSettings > div >p")  # 1.utmSettings for whole div, css selector for clickable element
+    By.ID, ".enableUtmSettings")  # 1.utmSettings for whole div, css selector for clickable element
 inputWarningMessage = (By.CSS_SELECTOR, ".smsMessage > fieldset > p")  # 2
 JourneyListFilterInput = (By.ID, "search-value")  # 3
 TestRadioButton = (By.ID, "Test")  # 4 input might be not enough but if we try to take label, things get ugly.
