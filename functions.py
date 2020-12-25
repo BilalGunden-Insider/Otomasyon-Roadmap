@@ -19,14 +19,14 @@ class amazonFunctions(unittest.TestCase):
         self.wait.until(EC.presence_of_element_located(Locators.SIGN_IN_BUTTON)).click()
 
     def elemStringAssertion(self, Locator, String):
-        assertion_text = self.browser.find_element_by_class_name(Locator).text
+        assertion_text = self.wait.until(EC.presence_of_element_located(Locator)).text
         self.assertEqual(assertion_text, String)
 
     def searchKey(self, Key):
         self.browser.find_element_by_id("twotabsearchtextbox").send_keys(Key)
         self.wait.until(EC.presence_of_element_located(Locators.SEARCH_BUTTON_ICON)).click()
-        searched_input = self.browser.find_element_by_class_name("a-color-state").text
-        self.assertEqual(searched_input, '"Samsung"')
+        searched_input = self.wait.until(EC.presence_of_element_located("a-color-state")).text
+        self.assertEqual(searched_input, '"' + Key + '"')
 
     def hoverClick(self, hoverLocator, clickLocator):
         hoverable_item = self.browser.find_element_by_id(hoverLocator)
